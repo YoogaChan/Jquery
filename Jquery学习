@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script  src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+       $(function () {
+
+//    $("div").html("一晴方觉夏始深");//标签选择器
+//     $("#p").css({"font-size":"20px"});//id选择器
+//     $(".oli").css({"background-color":"green"});//类选择器
+
+           //$("tr:gt(1)").css({"background-color":"red"});//  gt()  匹配大于索引值的   red
+
+           //$("tr:lt(2)").css({"background-color":"green"});// lt() 匹配小于索引值2的 green
+
+           //$("div:contains('yoga')").css({"color":"red"});// contains() 匹配包含给定文本的元素
+
+           //$("div:empty").html("88888");// empty 匹配不包含子元素或文本元素   88888
+
+           //$("div:parent").html("77777");// parent 匹配包含子元素或文本元素    77777
+
+           //$("div:has('p')").css({"color":"blue"});// has() 匹配含有p元素的元素(div)
+
+           //$("div:not('p')").css({"font-size":"15px"});// not() 匹配含没有p元素的元素(div)
+
+           //$(":header").css({"color":"yellow"});// :header 匹配标题元素 (h1-h6)
+
+           //$("div:hidden").css({"display":"block"});// :hidden 匹配隐藏的不可见的元素(或者 type=hidden的元素) 让它显示。
+
+           //$("div:visible").css({"background-color":"pink"});// :visible  匹配所有的可见的元素
+
+           //属性选择器
+
+           //$("div[class]").css({"background-color":"orange"});// :[attribute] 匹配包含给定属性的元素  [class][id][name].....
+
+           //$("input[type='text']").css({"background-color":"gray"});//[attribute='value']匹配包含给定属性某个特定值的元素
+
+           //$("input[type！='user']").css({"background-color":"green"}); //[attribute=^'value'] 匹配给定属性不等于某个特定值的元素
+
+           //$("ul li:first-child").css({"color":"red"}); //first-child 匹配所有父元素的第一个子元素
+
+           //$("ul li:last-child").css({"color":"green"});//last-child 匹配所有父元素的最后一个子元素
+
+           //$("ul li:nth-child(2)").css({"color":"blue"});//nth-child 匹配所有父元素任意一个子元素（索引值从1开始）
+
+           //表单对象属性
+           //$("input：enabled").css({"background-color":"green"});//:enabled 可用
+
+           //$("input：disabled").css({"background-color":"red"});//：disabled 不可用
+
+           //$("#box").find("p").css({"color":"pink"});// find() 查找后代元素
+
+           //$(".box").next().css({"color":"red"}); // next()当前元素的下一个同级元素
+
+           //$(".box").prev().css({"color":"green"}); // prev()当前元素的上一个同级元素
+
+           //$(".box").nextAll().css({"color":"lightgreen"}); // nextAll() 当前元素的下面的所有同级同级元素
+
+           //$(".box").prevAll().css({"color":"lightpink"}); // nextAll() 当前元素的下面的所有同级同级元素
+
+           //$(".box").nextUntil(".book3").css({"color":"lightblue"});// nextUntil 查找当前元素之后所有的同辈元素，直到遇到匹配的那个元素为止。
+                                                                   //(box-box3)  box<nextUntil<=box3
+
+            //$("#circle").children().css({"font-size":"20px","color":"pink"});// children() 匹配每一个元素的所有子元素
+
+           //$("span").eq(0).parent().css({"color":"green"});//当前元素的父元素(往上离得最近的一个)
+
+           //$("span").eq(0).parents("#bigcircle").html("我是bigcircle");//当前元素的祖先元素(有多个)
+                                                                  //传参，可进一步筛选到某一个选定的祖先元素
+
+       })
+
+    </script>
+</head>
+<body>
+<div id="p"> 连雨不知春去</div>
+<div class="oli">梦里不知身是客</div>
+
+<div id="box">好雨知时节
+
+<p>我是box里面的p</p>
+
+</div>
+
+<table>
+    <tr><td>守望先锋</td></tr>
+    <tr><td>虚幻争霸</td></tr>
+    <tr><td>英雄联盟</td></tr>
+    <tr><td>神之浩劫</td></tr>
+</table>
+
+<div></div><!--空元素-->
+<div>kina</div>
+<div>hyden</div>
+
+
+<div>
+    <p>岁月神偷</p>
+</div>
+
+
+<h1>美丽传说</h1>
+<h2>神话传说</h2>
+
+<div style="display: none">隐藏的div</div>
+
+<div id="lol"></div>
+<div class="w3c"></div>
+
+
+<input type="text" name="user" value="" disabled="disabled">
+<input type="password" name="password" value="" enabled="enabled">
+
+
+<ul>
+    <li>第1个li</li>
+    <li>第2个li</li>
+    <li>第3个li</li>
+</ul>
+<div class="box0">我是box上面的同级元素box0</div>
+<div class="box">我是box</div>
+<div class="box1">我是box下面的同级元素box1</div>
+<div class="box2">我是box下面的同级元素box2</div>
+<div class="box3">我是box下面的同级元素box3</div>
+
+<div id="bigcircle">
+<div id="circle">
+    <span>我是第1个</span></br>
+    <span>我是第2个</span></br>
+    <span>我是第3个</span></br>
+    <span>我是第4个</span></br>
+    <span>我是第5个</span></br>
+</div>
+</div>
+
+
+
+
+
+</body>
+</html>
