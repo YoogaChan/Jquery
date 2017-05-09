@@ -1,0 +1,113 @@
+//HTML部分
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>登录页面</title>
+      <link rel="stylesheet" type="text/css" href="css/login.css"/>
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="js/login2.js"></script>
+      <script src="js/login.js"></script>
+
+   </head>
+   <body>
+     <div id="login">
+        <div id="login_logo">
+            <img src="img/logo_login.png"/>
+        </div>
+
+        <div id="login_text">
+            <span class="login_text">登录</span> <span class="login_text2">还没有账号？<a href="#">注册</a></span>
+        </div>
+
+        <form action="#" id="form">
+            <img src="img/register_01.png" class="register"><input type="text" name="" id="user" value="">
+            <div id="usererror">用户名不可以用数字开头</div>
+            <div id="userlength">用户名在6到20位之间</div>
+            <img src="img/register_02.png" class="register"><input type="password" name="" id="password" value="">
+            <div id="passworderror">密码不能为空</div>
+            验证码<input type="" name="" id="code" value="" ><img src="img/code_img.jpg" class="code_img"><br/>
+            <input type="checkbox" name="" id="checkbox" value="" >记住我
+            <input type="submit" value="登录"id="sub">
+        </form>
+         <div id="btn">X</div>
+        <div class="others_login_text">
+            使用第三方账号登录
+        </div>
+        <div id="otherslogin">
+            <a href="http://weibo.com"><img src="img/login_sina.png" alt=""></a>
+            <a href="https://im.qq.com"><img src="img/login_qq.png"  alt=""></a>
+            <a href="https://wx.qq.com"><img src="img/login_dou.png" alt=""></a>
+        </div>
+
+
+    </div>
+     <div id="shadow"><img src="img/admin-bg.jpg" alt=""></div>
+   </body>
+</html>
+..................................................................................................................................
+//JavaScript部分
+
+window.onload =function(){
+   var username=document.getElementById("user");
+   var pass=document.getElementById("password");
+   
+   username.onblur=function() {
+      
+      var uservalue = username.value;
+      var userlength = document.getElementById("userlength");
+      var usererror = document.getElementById("usererror");
+      if(uservalue[0]<=9 && uservalue[0]>=0){
+         
+         usererror.style.display="inline-block";
+      }
+      if(!(uservalue.length>=6 && uservalue.length<=20)){
+         
+         userlength.style.display="inline-block";
+      }  
+   }
+   
+   pass.onblur=function(){
+      
+      var passvalue=pass.value;
+      if (passvalue.length==0 || pass.value==null) {
+         passworderror.style.display="inline-block";
+      }
+      
+   }
+ 
+}
+..................................................................................................................................
+//Jquery部分
+$(function () {
+    //获取窗口的可视区域
+    var window_view_h = document.body.clientHeight||document.documentElement.clientHeight||window.innerHeight;
+    var window_view_w = document.body.clientWidth||document.documentElement.clientWidth||window.innerWidth;
+
+    $("#login").css({//为login设置居中位置
+
+            "left":((window_view_w-580)/2)+"px",
+            "top":((window_view_h-660)/2)+"px"
+        }
+    );
+
+   $(window).resize(function () {  //页面重置时
+
+       var window_view_h = document.body.clientHeight||document.documentElement.clientHeight||window.innerHeight;
+       var window_view_w = document.body.clientWidth||document.documentElement.clientWidth||window.innerWidth;
+
+       $("#login").css({
+               "left": ((window_view_w - 580) / 2) + "px",
+               "top": ((window_view_h - 660) / 2) + "px"
+           }
+       );
+   })
+    
+$("#btn").click(function () {
+    $("#shadow").hide();
+    $("#login").hide();
+    
+})
+
+})
