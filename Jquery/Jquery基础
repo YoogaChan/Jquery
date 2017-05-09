@@ -70,6 +70,25 @@
            //$("span").eq(0).parents("#bigcircle").html("我是bigcircle");//当前元素的祖先元素(有多个)
                                                                   //传参，可进一步筛选到某一个选定的祖先元素
 
+//           if($("p").parent().is("div")){  // is()  是否是   是true 否 flase
+//
+//               alert("p的父元素是div")
+//           }
+
+           //$("p").slice(0,3).css({"background-color":"lightpink"});// slice() 对有多个相同元素，进行部分截取 （0<=x<3）
+
+           //filter（）筛选出与指定表达式匹配的集合
+           //exp1:
+//            var arr=[1,2,3,4,5];
+//            var newarr=arr.filter(function (el,index,arr) {
+//
+//                return el>2;
+//            });
+//            console.log(newarr);  //3 4 5
+           //exp2:
+           
+           //$("div").filter(".box").css({"background-color":"yellow"});
+           
        })
 
     </script>
@@ -134,5 +153,15 @@
     <span>我是第5个</span></br>
 </div>
 </div>
+
+<p>文段1</p>
+<p>文段2</p>
+<p>文段3</p>
+<p>文段4</p>
+<p>文段5</p>
+
+
+
+
 </body>
 </html>
