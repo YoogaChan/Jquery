@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script  src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $ (function () {
+//内容处理
+//      $("div").html("英雄联盟极地大乱斗"); //获取 元素内容    //英雄联盟极地大乱斗
+
+//      $("div").html( function(index,oldhtml){ //回调函数
+
+//      return oldhtml;
+
+//      });  //网易阴阳师
+//        $("div").text();//获取元素文本的内容
+//
+//        $("div").text("哈哈哈");//设置元素文本的内容 //哈哈哈
+
+//       console.log($("#user").val());//获取||设置元素对象的值 //123
+
+
+//样式css   css类
+            //$("div").addClass("box");//添加类
+            //$("div").removeClass("box1")//删除类
+
+//
+//            $("span").click(function () {
+//
+//                var index=$(this).index();
+//                console.log(index);
+//
+//            })
+
+
+ //          $("div").attr({"class":"ffff"}); // attr 设置、获取元素的属性
+ //          $("img").removeAttr("src"); //  removeAttr 删除元素的属性
+
+            //console.log($("#box").height()); // height()获取元素高度
+            //console.log($("#box").width());// width()获取元素宽度
+
+            //$("#box").height(500);// height() 设置元素的高度 （可以直接传数字）；
+
+            //$("#box").offset({"top":"100","left":"100"});// offset() 设置元素相对于当前窗口的偏移量
+
+        //scrollTop()
+            
+//            $("#pox").scrollTop(function () {// 获取滚动条滚动上去的长度
+//                var scroll=$("#pox").scrollTop();
+//                //console.log(scroll);    //  输出被滚动条滚动上去内容的 top值 （内容长度）
+//            })
+            // $("#pox").scrollTop(280);//设置滚动量
+
+        })
+        
+    </script>
+    <style>
+        *{
+            padding: 0px;margin: 0px;
+        }
+        span{
+            background-color: lightpink;
+            color: white;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+     <div>网易阴阳师</div>
+     <div class="box1"></div>
+     <form action="#">
+         <input type="text" value="123" id="user">
+     </form>
+  <!--设置索引值-->
+  <!--<div id="box">-->
+      <!--<span>1</span>-->
+      <!--<span>2</span>-->
+      <!--<span>3</span>-->
+      <!--<span>4</span>-->
+  <!--</div>-->
+
+     <img src="1.jpg" alt="">
+<!--<div id="box" style="height: 200px;width: 200px;background-color: red"></div>-->
+
+     <div id="pox" style="border:1px solid black;width:250px;height:200px;overflow-y: scroll;position:absolute;left: 50px">
+         君生我未生，我生君已老。<br/>
+         君恨我生迟，我恨君生早。<br/>
+         君生我未生，我生君已老  <br/>
+         恨不生同时，日日与君好。<br/>
+         我生君未生，君生我已老。<br/>
+         我离君天涯，君隔我海角。<br/>
+         我生君未生，君生我已老。<br/>
+         化蝶去寻花，夜夜栖芳草。<br/>
+         君生我未生，我生君已老。<br/>
+         君恨我生迟，我恨君生早。<br/>
+         君生我未生，我生君已老  <br/>
+         恨不生同时，日日与君好。<br/>
+         我生君未生，君生我已老。<br/>
+         我离君天涯，君隔我海角。<br/>
+         我生君未生，君生我已老。<br/>
+         化蝶去寻花，夜夜栖芳草。<br/>
+         君生我未生，我生君已老。<br/>
+         君恨我生迟，我恨君生早。<br/>
+         君生我未生，我生君已老  <br/>
+         恨不生同时，日日与君好。<br/>
+         我生君未生，君生我已老。<br/>
+         我离君天涯，君隔我海角。<br/>
+         我生君未生，君生我已老。<br/>
+         化蝶去寻花，夜夜栖芳草。<br/>
+     </div>
+
+
+
+</body>
+</html>
