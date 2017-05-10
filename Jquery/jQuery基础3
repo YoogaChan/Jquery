@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script  src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            //事件委托 绑定父元素  绑定多个事件   实现对多个不同子元素执行不同的代码
+
+//         $("#box").on("click","div",function (event) {
+//
+//            if(event.target.id=="div1"){
+//                $(this).css({"background-color":"red"});
+//            }else if (event.target.id=="div2"){
+//                $(this).css({"background-color":"green"});
+//            }else if(event.target.id=="div3"){
+//                $(this).css({"background-color":"pink"});
+//            }
+//         })
+          //向函数传递数据 (event.data.msg 事件对象的数据对象)
+
+//        $("#pox").on("click",{"msg":"暴雪游戏"},function (event) { //点击#pox，改变它的数据
+//                  //event.data
+//            console.log(event.data.msg);
+//        })
+
+           //动态创建元素
+
+//         $("#btn").click(function () {
+//
+//             var div=$("<div style='color: red'>我是新添加的div</div>");
+//
+//             $("#box").append(div);
+//
+//         })
+           //移除事件 off()
+            // $("#btn").off("click");//有参数  就仅仅移除参数的事件类型
+            //$("#div").off();//  无参数 移除匹配元素的所有的事件类型
+
+          //one() 事件只执行一次   (绑定多个事件)
+            //exp1:
+//            $("#div1").one("mouseover mouseout",function (event) {//传参 判断语句 回调函数 方式
+//                if(event.type=="mouseover"){
+//                    $(this).css({"background-color":"red"});
+//                }else{
+//                    $(this).css({"background-color":"green"});
+//                }
+//            })
+            //exp2:
+//             $("#div1").one({    //对象（键值对）方式
+//                 "mouseover":function () {
+//                     $(this).css({"background-color":"orange"});
+//                 },
+//                 "mouseout":function () {
+//                     $(this).css({"background-color":"lightgreen"});
+//                 }
+//             })
+
+           //自定义事件触发 trigger()
+
+//           $("p").on("my",function (event,message1,message2) {
+//
+//               console.log(message1+" "+message2);
+//           });
+//               $("#btn").click(function () { //鼠标单击按钮时，将值传入上面回调函数中，并在控制台输出
+//
+//                      $("p").trigger("my",["hello","world"]);
+//
+//               })
+
+            //鼠标事件
+
+            // 1. (e.offsetX: e.offsetY:) 相对于事件源左上角（0,0）的坐标
+//              $("#div1").on("mouseover",function (e) {
+//                  console.log("e.offsetX:"+ e.offsetX +"e.offsetY"+e.offsetY);
+//              })
+           // 2.(e.screenX: e.screenY:) 相对于设备屏幕左上角（0,0）的坐标
+//              $("#div1").on("mousemove",function (e) {
+//                console.log("e.screenX:"+ e.screenX +"e.screenY"+e.screenY);
+//              })
+
+            //3.(e.clientX: e.clienty:)相对于浏览器（可视区左上角0,0）的坐标
+//             $("#div1").on("mousemove",function (e) {
+//                console.log("e.clientX:"+ e.clientX +"e.clientY"+e.clientY);
+//              })
+            //4.(e.pageX: e.pageY:)相对于整个文档左上角（0,0）的坐标
+//             $("#div1").on("mousemove",function (e) {
+//               console.log("e.pageX:"+ e.pageX +"e.pageY"+e.pageY);
+//             })
+
+        })
+    </script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+
+        }
+        #btn{
+            width: 50px;height: 50px;background-color: yellow; position:absolute;left: 250px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="box">
+
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+
+</div>
+
+
+<div id="pox">守望先锋</div>
+
+<button id="btn"></button>
+
+<p>自定义事件触发</p>
+
+</body>
+</html>
