@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script  src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+          $("#show").click(function () {  //显示
+
+              $("div").show(2000);
+
+            })
+            $("#hide").click(function () {//隐藏
+
+                $("div").hide(2000,function () { //回调函数（队列——执行顺序有先后） //先执行隐藏
+                    $("#text").css({"background-color":"green"}); //再执行#text元素的背景颜色变化
+                });
+
+            })
+
+            $("#show_hide").click(function () {  //显示||隐藏
+
+                $("div").toggle(2000);
+
+            })
+
+        })
+
+
+    </script>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            background-color:lightpink;
+        }
+        #text{
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            margin-top:100px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<button id="show">显示</button>
+<button id="hide">隐藏</button>
+<button id="show_hide">显示||隐藏</button>
+<p id="text">哈哈哈哈</p>
+
+</body>
+</html>
