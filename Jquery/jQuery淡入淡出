@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js "></script>
+    <script>
+
+        $(function () {
+
+
+            $("#fadeIn").click(function () {
+                $("#box").fadeIn("slow");
+            });
+            $("#fadeOut").click(function () {
+                $("#box").fadeOut("slow");
+            });
+
+           $("#fadeToggle").click(function () {
+            $("#box").fadeToggle("slow");
+        })
+
+        })
+
+    </script>
+    <style>
+        #box{
+            height: 600px;
+            width: 400px;
+            border: 1px solid black;
+            background-color: lightcoral;
+            margin-bottom: 20px;
+        }
+
+        button{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<button id="fadeIn">fadeIn</button>
+<button id="fadeOut">fadeOut</button>
+<button id="fadeToggle">adeToggle</button>
+
+
+</body>
+</html>
