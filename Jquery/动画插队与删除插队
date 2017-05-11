@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画插队与删除插队</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script>
+      $(function () {
+
+        $("#star").click(function () {
+
+          $("#text1").animate({"width":"300px"},3000);
+          $("#text2").queue(function () { //插队 率先执行
+              $(this).css({"background-color":"green"});
+              $(this).dequeue();//执行完代码后 还想往下执行
+          })
+            $("#text3").animate({"width":"500px"},3000);
+            $("#text4").animate({"width":"800px"},3000);
+
+        })
+
+     })
+
+    </script>
+    <style>
+        div{
+            width: 100px;
+            height: 50px;
+            background-color: lightpink;
+            margin-bottom: 10px;
+        }
+        #box{
+            width: 100px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<div id="text1">雷克萨斯</div>
+<div id="text2">英菲尼迪</div>
+<div id="text3">凯迪拉克</div>
+<div id="text4">华晨宝马</div>
+
+<button id="star">开始动画</button>
+<button id="stop">停止动画</button>
+
+
+
+</body>
+</html>
