@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>完整的事件委托</title>
+    <script  src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+     $(function () {
+
+         $("#box").on("click","div,p,li,span",function (event) {
+
+           if(event.target.nodeName.toLowerCase()=="div"){     //nodeName 元素节点名称
+
+               if(event.target.id=="div1"){
+                   $(this).css({"background-color":"orange"});
+               }
+               else if(event.target.id=="div2"){
+                   $(this).css({"background-color":"yellow"});
+               }
+               else if(event.target.id=="div3"){
+                   $(this).css({"background-color":"blue"});
+               }
+               else if(event.target.id=="div4"){
+                   $(this).css({"background-color":"pink"});
+               }
+
+             }
+             if(event.target.nodeName.toLowerCase()=="li"){
+                 $(this).css({"background-color":"red"});
+             }
+             if(event.target.nodeName.toLowerCase()=="p"){
+                 $(this).css({"background-color":"black"})
+             }
+             if(event.target.nodeName.toLowerCase()=="span"){
+                 $(this).css({"background-color":"green"})
+             }
+
+         })
+
+
+     })
+
+    </script>
+    <style>
+        div{ width: 200px;height: 200px;border: 1px solid black;  }
+        p{width: 200px;height: 100px;border: 1px solid black; color: white }
+        span{width: 400px;height:100px;border: 1px solid black;  }
+        li{width: 200px;height: 100px;border: 1px solid black;  }
+
+    </style>
+</head>
+<body>
+<div id="box">
+<div id="div1">我是div1</div>
+<div id="div2">我是div2</div>
+<div id="div3">我是div3</div>
+<div id="div4">我是div4</div>
+<p>我是p</p>
+<li>我是li</li>
+<span>我是span</span>
+</div>
+
+
+
+
+</body>
+</html>
