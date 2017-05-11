@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery楼层效果</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script>
+       $(function () {
+        $(window).scroll(function () { //获取滚动条
+            var winH=$(window).height();//获取窗口可视区域的高度
+            var scrollTop=$(window).scrollTop();
+            if(scrollTop>=$("#header").height()){//当滚动的长度大于header的高度时，“楼梯”和“回到顶部” 淡入
+
+                $("#stairs").fadeIn();
+                $("#top").fadeIn();
+
+                            // each() 遍历获取 找到所有的楼层   (i=索引，el=当前元素)
+                            $(".floor").each(function (i,el) {
+                                    //获取每个楼层到浏览器可视区顶部的距离
+                                     var floor_top=$(el).offset().top;
+                                    if(winH+scrollTop-$(this).offset().top>=winH/2){//窗口可视区域的高度+被卷上去的高度-当前元素的高度>=窗口可视区域的高度的一半
+                                        $("#stairs li").eq(i).addClass("on").siblings().removeClass("on");
+                                    }
+                            })
+                                   }else {    //否则，当滚动的长度大于header的高度时，“楼梯”和“回到顶部” 淡出
+                                    $("#stairs").fadeOut();
+                                    $("#top").fadeOut();
+                                }
+                            })
+
+               //点击变高亮  //事件委托
+
+           $("#stairs").on("click","li",function () {
+
+               $(this).addClass("on").siblings().removeClass("on");
+               var index=$(this).index();
+              // console.log(index);
+             //点击回到对应楼层
+           var floor_scrolltop=$(".floor").eq(index).offset().top;
+                //获取对应索引的楼层，距离顶部的距离
+           $("html,body").stop().animate({"scrollTop": floor_scrolltop},500,function () {
+
+           })
+
+
+           })
+
+
+  //回到顶部
+       $("#top").click(function () {
+           $("html,body").animate({
+               "scrollTop":0
+           },500)
+       })
+
+       })
+
+    </script>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+        }
+        #header{
+            height: 200px;
+            background-color: lightskyblue;
+            font-size: 50px;
+            line-height: 200px;
+            text-align: center;
+
+        }
+        .floor {
+            height:1000px;
+            color: white;
+            font-size: 80px;
+            line-height: 1000px;
+            text-align: center;
+
+        }
+        #footer{
+             height: 600px;
+             color: white;
+             font-size: 50px;
+             line-height: 400px;
+             text-align: center;
+            background-color: #9c2f06;
+         }
+        ul{
+            list-style: none;
+            z-index: 110000;
+            position: absolute;
+            left: 10px;
+            top: 100px;
+            width: 100px;
+            border: 1px solid white;
+            text-align: center;
+            background-color: gray;
+            opacity: 0.8;
+            display: none;
+            position: fixed;
+
+        }
+        li{
+
+            color: white;
+            border: 1px solid white;
+            width: 100px;
+            height: 60px;
+            line-height: 50px;
+
+
+        }
+        #top{
+            height: 40px;
+            width: 60px;
+            border: 1px solid black;
+            line-height: 40px;
+            background-color:gray;
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            z-index: 200;
+            border-radius: 5px;
+            position: fixed;
+            top: 900px;
+            left: 1830px;
+            display: none;
+
+        }
+        #stairs li:hover span{display: block;background-color: lightpink;height: 60px}
+        #stairs li:hover em{display: none;}
+
+        span{
+            display: none;
+        }
+
+        .on{background-color: red}
+    </style>
+</head>
+<body>
+<ul id="stairs">
+    <li class="on">
+        <em>1F</em>
+        <span>服饰</span>
+    </li>
+    <li> <em>2F</em>
+        <span>美妆</span>
+    </li>
+    <li>
+        <em>3F</em>
+        <span>手机</span>
+    </li>
+    <li>
+        <em>4F</em>
+        <span>家电</span>
+    </li>
+    <li>
+        <em>5F</em>
+        <span>数码</span>
+    </li>
+    <li>
+        <em>6F</em>
+        <span>运动</span>
+    </li>
+    <li>
+        <em>7F</em>
+        <span>居家</span>
+    </li>
+    <li>
+        <em>8F</em>
+        <span>母婴</span>
+    </li>
+    <li>
+        <em>9F</em>
+        <span>食品</span>
+    </li>
+    <li>
+        <em>10F</em>
+        <span>图书</span>
+    </li>
+    <li>
+        <em>11F</em>
+        <span>服务</span>
+    </li>
+</ul>
+<div id="top">goTop</div>
+<div id="header">头部</div>
+<div id="main">
+    <div class="floor" style="background-color: red">服饰</div>
+    <div class="floor" style="background-color: orange">美妆</div>
+    <div class="floor" style="background-color: yellow">手机</div>
+    <div class="floor" style="background-color: lightpink">家电</div>
+    <div class="floor" style="background-color: lightgreen">数码</div>
+    <div class="floor" style="background-color: green">运动</div>
+    <div class="floor" style="background-color: cyan">居家</div>
+    <div class="floor" style="background-color: blue">母婴</div>
+    <div class="floor" style="background-color: purple">食品</div>
+    <div class="floor" style="background-color: lightseagreen">图书</div>
+    <div class="floor" style="background-color: lightcoral">服务</div>
+    <div id="footer">尾部</div>
+</body>
+</html>
